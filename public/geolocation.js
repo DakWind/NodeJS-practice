@@ -3,6 +3,7 @@ let lon;
 const button = document.getElementById("submit");
 
 button.addEventListener('click', async event => {
+//const timestamp = Date.now();
 const data = { lat, lon };
 const options = {
     method: 'POST',
@@ -13,7 +14,7 @@ const options = {
 };
 const response = await fetch('/api', options);
 const json = await response.json();
-//console.log(json);
+console.log(json);
 });
 
 // form the map
