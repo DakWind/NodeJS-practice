@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-//const cors = require('cors')
-//const { pool } = require('./config')
+const cors = require('cors')
+const { pool } = require('./config')
 //const Datastore = require('nedb');
 //const { Client } = require('pg');
 
@@ -41,7 +41,7 @@ const database = new Datastore('database.db');
 database.loadDatabase();
 */
 
-const db = require('./queries').default;
+const db = require('./queries');
 
 app.get('/api', db.getUsers);
 

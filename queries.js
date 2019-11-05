@@ -11,7 +11,7 @@ const pool = new Pool({
 
 require('dotenv').config()
 
-import { Pool } from 'pg'
+const { Pool } = require('pg')
 const isProduction = process.env.NODE_ENV === 'production'
 
 const connectionString = `postgresql://me:password@localhost:5432/api`
@@ -41,7 +41,7 @@ const createUser = (request, response) => {
   })
 };
 
-export default {
+module.exports = {
     getUsers,
     createUser,
 };
